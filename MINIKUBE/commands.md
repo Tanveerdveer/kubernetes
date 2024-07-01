@@ -3,43 +3,49 @@ Step 1 Apply updates:
 
 ## Command:<a id="command"></a>
 
-'''sudo apt update -y'''
-
-'''sudo apt upgrade -y'''
-
+```
+sudo apt update -y
+sudo apt upgrade -y
+```
 
 ## Step 2) Install Minikube dependencies:<a id="step-2-install-minikube-dependencies"></a>
 
 ## Command:<a id="command-1"></a>
 
- '''sudo apt install -y curl wget apt-transport-https'''
-
- 
+```
+sudo apt install -y curl wget apt-transport-https
+```
 
 
 ##  Step 3) Download Minikube Binary:<a id="step-3-download-minikube-binary"></a>
 
 ## Command:<a id="command-2"></a>
 
- '''wget https\://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64'''
-
+```
+wget https\://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+```
  
 
 Once the binary is downloaded copy it to the path /usr/local/bin and set the executable permissions on it
 
 
 ## Command:<a id="command-3"></a>
+```
+sudo cp minikube-linux-amd64 /usr/local/bin/minikube
+```
 
-'''sudo cp minikube-linux-amd64 /usr/local/bin/minikube'''
-
-'''sudo chmod +x /usr/local/bin/minikube'''
+```
+sudo chmod +x /usr/local/bin/minikube
+```
 
 Verify the minikube version
 
 
 ## Command:<a id="command-4"></a>
 
-'''minikube version'''
+```
+minikube version
+```
 
 Output:
 
@@ -55,23 +61,31 @@ Kubectl is a command line utility which is used to interact with the Kubernetes 
 
 ## Command:<a id="command-5"></a>
 
-'''curl -LO https\://storage.googleapis.com/kubernetes-release/release/\`curl -s https\://storage.googleapis.com/kubernetes-release/release/stable.txt\`/bin/linux/amd64/kubectl'''
+```
+curl -LO https\://storage.googleapis.com/kubernetes-release/release/\`curl -s https\://storage.googleapis.com/kubernetes-release/release/stable.txt\`/bin/linux/amd64/kubectl
+```
 
 Once kubectl is downloaded then set the executable permissions on kubectl binary and move it to the path /usr/local/bin.
 
 
 ## Command:<a id="command-6"></a>
 
-'''chmod +x kubectl'''
+```
+chmod +x kubectl
+```
 
-'''sudo mv kubectl /usr/local/bin/'''
+```
+sudo mv kubectl /usr/local/bin/
+```
 
 Now verify the kubectl version:
 
 
 ## Command:<a id="command-7"></a>
 
-'''kubectl version -o yaml'''
+```
+kubectl version -o yaml
+```
 
 **Output:**
 
@@ -102,15 +116,17 @@ kustomizeVersion: v4.5.7
 
 ## Command:<a id="command-8"></a>
 
-'''minikube start'''
+```
+minikube start
+```
 
 In case you want to start minikube with customize resources and want installer to automatically select the driver then you can run following command,
 
 
 ## Command:<a id="command-9"></a>
-
-'''minikube start --addons=ingress --cpus=2 --cni=flannel --install-addons=true --kubernetes-version=stable --memory=6g'''
-
+```
+minikube start --addons=ingress --cpus=2 --cni=flannel --install-addons=true --kubernetes-version=stable --memory=6g
+```
 **Output:**
 
 😄  minikube v1.29.0 on Ubuntu 22.04
@@ -159,9 +175,9 @@ Run below minikube command to check status,
 
 
 ## Command:<a id="command-10"></a>
-
-    '''minikube status'''
-
+```
+    minikube status
+```
 **Output:**
 
 minikube
@@ -178,9 +194,9 @@ kubeconfig: Configured
 
 
 ## Command:<a id="command-11"></a>
-
-'''kubectl cluster-info'''
-
+```
+kubectl cluster-info
+```
 **Output:**
 
 Kubernetes control plane is running at https\://192.168.39.196:8443
@@ -191,9 +207,9 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
 
 ## Command:<a id="command-12"></a>
-
-'''kubectl get nodes'''
-
+```
+kubectl get nodes
+```
 **Output:**
 
 NAME       STATUS   ROLES           AGE   VERSION
@@ -204,9 +220,9 @@ minikube   Ready    control-plane   73m   v1.26.1
 ## Step 6) Managing Addons on minikube<a id="step-6-managing-addons-on-minikube"></a>
 
 ## Command:<a id="command-13"></a>
-
-'''minikube addons list'''
-
+```
+minikube addons list
+```
 **Output**:
 
 \|-----------------------------|----------|--------------|--------------------------------|
@@ -289,10 +305,9 @@ Let’s assume we want to enable and access kubernetes dashboard.
 
 
 ## Command:<a id="command-14"></a>
-
- '''minikube dashboard'''
-
+```
+ minikube dashboard
+```
 **Output:**
 
  ![](https://lh7-us.googleusercontent.com/docsz/AD_4nXcbhOsjit0lhVJ9l7mcv8UpuUNxBBWcNSO8jnqvhaLWAszbX1exL_4LX0_rUb64gUWp8n_APTWIjKAEKrWiQTZt-QZxAWTtTSYx5VAE4xcUrc3QM1MjcaYwm_LIlMQ3A7XtxgjOI70bRXQNtk0ymSNktv3v?key=Gfh5yd9lEvdYsgkp3UCezw)
-
